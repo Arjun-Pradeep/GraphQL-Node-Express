@@ -1,0 +1,31 @@
+{
+  "name": "GraphQL-Node-Express",
+  "version": "1.0.0",
+  "description": "Learning GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js --exec babel-node -e js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arjun-Pradeep/GraphQL-Node-Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arjun-Pradeep/GraphQL-Node-Express/issues"
+  },
+  "homepage": "https://github.com/Arjun-Pradeep/GraphQL-Node-Express#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "nodemon": "^2.0.1"
+  }
+}
