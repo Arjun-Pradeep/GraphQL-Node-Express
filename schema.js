@@ -18,6 +18,7 @@ const schema = buildSchema(`
         email : String!
         age : Int!
         gender : Gender
+        items : [HackerNewsItem]
     }
 
     enum Gender {
@@ -32,6 +33,15 @@ const schema = buildSchema(`
         users : [User]
     }
     
+    input HackerNewsItemInput{
+        id : String
+        text : String
+        timeISO : String
+        time : Int
+        title : String
+        deleted : Boolean
+    }
+
     input UserInput{
         id : ID
         firstName : String!
@@ -39,6 +49,7 @@ const schema = buildSchema(`
         email : String!
         age : Int!
         gender : Gender
+        items : [HackerNewsItemInput]
     }
 
     type Mutation{
