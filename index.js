@@ -15,7 +15,16 @@ app.get('/',(req,res) => {
 })
 
 const root = {
-    hello : () => "Welcome to GraphQL"
+    item : () => {
+        return {
+            id : '12414',
+            text : 'This i hacker item',
+            timeISO : '2 pm tuesday',
+            time : 241435,
+            title : 'Graphql Learning',
+            deleted : false
+        }
+    }
 }
 
 app.use('/graphql',graphqlHTTP({
