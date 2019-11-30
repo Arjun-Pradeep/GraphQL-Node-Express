@@ -24,6 +24,21 @@ const root = {
             title : 'Graphql Learning',
             deleted : false
         }
+    },
+
+    user : () => {
+        return {
+            firstName : 'Arjun',
+            lastName : 'Pradeep',
+            emails : [
+            {
+                email : 'ar@gmail.com'
+            },
+            {
+                email : 'arjun@gmail.com'
+            }
+            ]
+        }
     }
 }
 
