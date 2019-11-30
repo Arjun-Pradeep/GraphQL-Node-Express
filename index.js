@@ -14,6 +14,10 @@ app.get('/',(req,res) => {
     })
 })
 
+const users = []
+
+let user = {}
+
 const root = {
     item : () => {
         return {
@@ -30,15 +34,18 @@ const root = {
         return {
             firstName : 'Arjun',
             lastName : 'Pradeep',
-            emails : [
-            {
-                email : 'ar@gmail.com'
-            },
-            {
-                email : 'arjun@gmail.com'
-            }
-            ]
+            email : 'arjun@gmail.com'
         }
+    },
+
+    users: () => {
+        return users;
+    },
+
+    createUser : ({input}) => {
+        user = input
+        users.push(user)
+        return user
     }
 }
 
