@@ -17,6 +17,13 @@ const schema = buildSchema(`
         lastName : String!
         email : String!
         age : Int!
+        gender : Gender
+    }
+
+    enum Gender {
+        MALE
+        FEMALE
+        OTHER
     }
 
     type Query {
@@ -31,6 +38,7 @@ const schema = buildSchema(`
         lastName : String!
         email : String!
         age : Int!
+        gender : Gender
     }
 
     type Mutation{
