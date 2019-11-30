@@ -6,6 +6,8 @@ import graphqlHTTP from 'express-graphql'
 // I M P O R T    S C H E M A    F I L E 
 import schema from './schema'
 
+import resolvers from './resolvers'
+
 const app = express();
 
 app.get('/',(req,res) => {
@@ -14,40 +16,7 @@ app.get('/',(req,res) => {
     })
 })
 
-const users = []
-
-let user = {}
-
-const root = {
-    item : () => {
-        return {
-            id : '12414',
-            text : 'This i hacker item',
-            timeISO : '2 pm tuesday',
-            time : 241435,
-            title : 'Graphql Learning',
-            deleted : false
-        }
-    },
-
-    user : () => {
-        return {
-            firstName : 'Arjun',
-            lastName : 'Pradeep',
-            email : 'arjun@gmail.com'
-        }
-    },
-
-    users: () => {
-        return users;
-    },
-
-    createUser : ({input}) => {
-        user = input
-        users.push(user)
-        return user
-    }
-}
+const root = resolvers
 
 app.use('/graphql',graphqlHTTP({
     schema : schema,

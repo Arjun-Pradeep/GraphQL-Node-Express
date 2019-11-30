@@ -20,7 +20,7 @@ const schema = buildSchema(`
 
     type Query {
         item : HackerNewsItem
-        user : User
+        getUser(id: ID): User
         users : [User]
     }
     
