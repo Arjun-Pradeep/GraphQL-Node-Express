@@ -16,6 +16,7 @@ const schema = buildSchema(`
         firstName : String!
         lastName : String!
         email : String!
+        age : Int!
     }
 
     type Query {
@@ -29,6 +30,7 @@ const schema = buildSchema(`
         firstName : String!
         lastName : String!
         email : String!
+        age : Int!
     }
 
     type Mutation{
