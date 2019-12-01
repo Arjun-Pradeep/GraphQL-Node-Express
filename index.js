@@ -6,9 +6,13 @@ import graphqlHTTP from 'express-graphql'
 // I M P O R T    S C H E M A    F I L E 
 import schema from './schema'
 
-import resolvers from './resolvers'
+// M O N G O O S E 
+import mongoose from 'mongoose'
 
 const app = express();
+
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost/graphqdb')
 
 app.get('/',(req,res) => {
     return res.json({
@@ -16,11 +20,8 @@ app.get('/',(req,res) => {
     })
 })
 
-const root = resolvers
-
 app.use('/graphql',graphqlHTTP({
     schema : schema,
-    rootValue : root,
     graphiql : true
 }))
 
